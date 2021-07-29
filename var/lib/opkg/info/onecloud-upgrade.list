@@ -1,0 +1,17 @@
+/usr/share/onecloud-upgrade/
+/usr/
+/etc/
+/usr/sbin/onecloud_upgrading_led.sh
+/usr/sbin/onecloud_upgrade_run.sh
+/usr/sbin/onecloud_upgrade_restart.sh
+/etc/init.d/
+/usr/share/
+/
+/usr/share/onecloud-upgrade/.opkg_default.conf
+/usr/share/onecloud-upgrade/opkg.conf
+/usr/sbin/
+/usr/share/onecloud-upgrade/.img_date
+/usr/share/onecloud-upgrade/upgrade_log.conf
+/usr/sbin/upgrade
+/usr/share/onecloud-upgrade/upgrade_log_debug.conf
+/etc/init.d/S88wxmnt

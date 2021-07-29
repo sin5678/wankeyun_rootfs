@@ -1,0 +1,65 @@
+Package: onecloud-app
+Version: V1.2.4
+Section: extras
+Architecture: arm
+Maintainer: xlwthink<xlwthink@xunlei.com>
+MD5Sum: 5b64ca8824d3b295a4260be775d14a4c
+Size: 52505836
+Filename: onecloud-app_V1.2.4_arm.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: onecloud-system
+Version: V1.0.424
+Section: extras
+Architecture: arm
+Maintainer: xlwthink<xlwthink@xunlei.com>
+MD5Sum: 870969fd717d5e0d4a99857f981ed3bd
+Size: 214304122
+Filename: onecloud-system_V1.0.424_arm.ipk
+Source: null
+Description:  onething ws1608 system img.
+Priority: optional
+
+
+Package: onecloud-upgrade
+Version: V1.1.2
+Section: extras
+Architecture: arm
+Maintainer: onecloud<onecloud@onething.net>
+MD5Sum: 099a529a9326d9dd632f97314562ed28
+Size: 1912230
+Filename: onecloud-upgrade_V1.1.2_arm.ipk
+Source: null
+Description:  onething cloud software.
+Priority: optional
+
+
+Package: samba
+Version: 4.6.10
+Section: extras
+Architecture: arm
+Maintainer: xlwthink<xlwthink@xunlei.com>
+MD5Sum: 0688ace4ebf5ece76d1bbed7f7f0fca1
+Size: 14889444
+Filename: samba_4.6.10_arm.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: xyipkmng
+Version: V1.2.4
+Section: extras
+Architecture: arm
+Maintainer: xlwthink<xlwthink@xunlei.com>
+MD5Sum: 1c6bb0e55d2ca9e5ffaa2b5d654616fd
+Size: 928976
+Filename: xyipkmng_V1.2.4_arm.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+

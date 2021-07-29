@@ -1,0 +1,9 @@
+Package: samba
+Priority: optional
+Version: 4.6.10
+Architecture: arm
+Maintainer: xlwthink<xlwthink@xunlei.com>
+Depends: 
+Source: null
+Section: extras
+Description: Xunlei miner software.

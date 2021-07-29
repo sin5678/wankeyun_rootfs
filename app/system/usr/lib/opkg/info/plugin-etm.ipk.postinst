@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sh /app/system/miner.plugin-etm.ipk/start.sh &
+
+exit 0

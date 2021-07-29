@@ -1,0 +1,10 @@
+#!/bin/sh
+kill -9 `pidof smbd`
+kill -9 `pidof nmbd`
+
+[ -f /thunder/etc/config.json ] && mv /thunder/etc/config.json /thunder/etc/.config.json
+[ -f /etc/init.d/S91smb ] && /etc/init.d/S91smb stop
+[ -f /tmp/smb.conf ] && mv /tmp/smb.conf /tmp/.smb.conf
+rm -rf /var/lib/samba
+#rm -rf /thunder/etc/init.d/S91smb
+exit 0

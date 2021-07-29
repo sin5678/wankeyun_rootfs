@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case "$1" in
+    start)
+        sh /thunder/bin/run.sh &
+	sh /usr/sbin/onecloud_upgrade_run.sh &
+    ;;
+    stop)
+	sh /thunder/etc/stop_app.sh
+    ;;
+    restart|reload)
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?
+

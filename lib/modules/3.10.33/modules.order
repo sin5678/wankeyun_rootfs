@@ -1,0 +1,5 @@
+kernel/crypto/ansi_cprng.ko
+kernel/drivers/video/backlight/lcd.ko
+kernel/drivers/media/usb/gspca/gspca_main.ko
+kernel/drivers/amlogic/../../../hardware/amlogic/nand/amlnf/aml_nftl_dev.ko
+kernel/drivers/amlogic/../../../hardware/arm/gpu/mali/mali.ko

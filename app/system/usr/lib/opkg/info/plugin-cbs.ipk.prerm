@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sh /app/system/miner.plugin-cbs.ipk/stop.sh
+
+exit 0

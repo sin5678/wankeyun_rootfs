@@ -1,0 +1,9 @@
+Package: onecloud-upgrade
+Priority: optional
+Version: V1.1.1
+Architecture: arm
+Maintainer: onecloud<onecloud@onething.net>
+Depends: 
+Source: null
+Section: extras
+Description: onething cloud software.

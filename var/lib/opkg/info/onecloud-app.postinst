@@ -1,0 +1,41 @@
+#!/bin/sh
+
+check_rootfs_patch()
+{
+    ROOTFS_PATCH_DIR='/thunder/rootfs_patch'
+    for patch_file in  $(find $ROOTFS_PATCH_DIR -type f) ;do
+        rootfs_file=${patch_file#$ROOTFS_PATCH_DIR}
+        diff $rootfs_file $patch_file > /dev/null
+        if [ "$?" -eq "0" ];then
+        echo "" > /dev/null
+        else
+        PATCH_DIR=${rootfs_file%/*}
+        if [ ! -d $PATCH_DIR ];then
+        mkdir -p $PATCH_DIR
+        fi
+        cp -a $patch_file $rootfs_file
+        chmod a+x $rootfs_file
+        chmod a+r $rootfs_file
+        fi
+    done
+    for patch_file in  $(find $ROOTFS_PATCH_DIR -type l) ;do
+        rootfs_file=${patch_file#$ROOTFS_PATCH_DIR}
+        diff $rootfs_file $patch_file > /dev/null
+        if [ "$?" -eq "0" ];then
+        echo "" > /dev/null
+        else
+        PATCH_DIR=${rootfs_file%/*}
+        if [ ! -d $PATCH_DIR ];then
+        mkdir -p $PATCH_DIR
+        fi
+        cp -a $patch_file $rootfs_file
+        fi
+    done
+    chmod a+r /usr/lib/*
+    sync
+}
+
+check_rootfs_patch
+
+sh /thunder/bin/restart_app.sh &
+exit 0

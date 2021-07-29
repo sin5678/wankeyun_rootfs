@@ -1,0 +1,9 @@
+Package: plugin-cbs
+Priority: optional
+Version: 1.2.17
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+Depends:
+Source: null
+Section: extras
+Description: Xunlei miner software.

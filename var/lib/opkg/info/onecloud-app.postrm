@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ ! -x /usr/sbin/upgrade ]; then
+  echo 'src/gz snapshots https://update.peiluyou.com/conf/mcloud_release/packages' > /thunder/etc/opkg.conf
+  echo 'dest root /' >> /thunder/etc/opkg.conf
+  echo 'dest ram  /tmp' >> /thunder/etc/opkg.conf
+  echo 'arch arm 3' >> /thunder/etc/opkg.conf
+  echo 'option lists_dir /var/opkg-lists' >> /thunder/etc/opkg.conf
+  echo 'option overlay_root /overlay' >> /thunder/etc/opkg.conf
+else
+  mkdir -p /thunder/etc/
+  cp -f /usr/share/onecloud-upgrade/opkg.conf /thunder/etc/opkg.conf
+  cp -f /usr/share/onecloud-upgrade/opkg.conf /thunder/etc/.opkg_default.conf 
+  cp /usr/share/onecloud-upgrade/ubus_app_log.conf /thunder/etc/  
+  cp /usr/share/onecloud-upgrade/ubus_app_log_debug.conf /thunder/etc/
+  cp /usr/share/onecloud-upgrade/upgrade_rootfs.sh /thunder/etc/
+fi

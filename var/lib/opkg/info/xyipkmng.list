@@ -1,0 +1,16 @@
+/app/miner.xyipkmng.ipk/
+/app/miner.xyipkmng.ipk/xyipk_zlog.conf
+/app/miner.xyipkmng.ipk/bin/plugin_proxy
+/app/miner.xyipkmng.ipk/check_xyipkmng.sh
+/app/miner.xyipkmng.ipk/bin/xyipk
+/app/miner.xyipkmng.ipk/ipk_opkg.conf
+/app/miner.xyipkmng.ipk/bin/
+/app/miner.xyipkmng.ipk/stop.sh
+/app/miner.xyipkmng.ipk/xyipk_daemon.sh
+/etc/rc.d/S90xyipkmng
+/etc/init.d/xyipkmng
+/etc/rc.d/
+/app/
+/etc/init.d/S90xyipkmng
+/app/miner.xyipkmng.ipk/ipk_opkg.lock
+/app/miner.xyipkmng.ipk/start.sh

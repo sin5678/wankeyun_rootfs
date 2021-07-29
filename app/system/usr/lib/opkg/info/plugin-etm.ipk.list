@@ -1,0 +1,15 @@
+/miner.plugin-etm.ipk/version
+/miner.plugin-etm.ipk/lib/libxl_thunder_sdk.so
+/miner.plugin-etm.ipk/lib/libxluagc.so
+/miner.plugin-etm.ipk/lib/libxl_stat.so
+/miner.plugin-etm.ipk/bin/etm_monitor
+/miner.plugin-etm.ipk/bin/etm
+/miner.plugin-etm.ipk/bin/run.sh
+/miner.plugin-etm.ipk/bin/wxdp
+/miner.plugin-etm.ipk/bin/hubble
+/miner.plugin-etm.ipk/makeipkversion
+/miner.plugin-etm.ipk/start.sh
+/miner.plugin-etm.ipk/stop.sh
+/miner.plugin-etm.ipk/conf/hubble_log.ini
+/miner.plugin-etm.ipk/conf/log.ini
+/miner.plugin-etm.ipk/conf/thunder_mounts.cfg

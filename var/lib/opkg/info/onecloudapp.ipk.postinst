@@ -1,0 +1,39 @@
+#!/bin/sh
+[ -f /etc/init.d/S91smb ] && cp -af /etc/init.d/S91smb /thunder/etc/init.d/S91smb && chmod +x /thunder/etc/init.d/S91smb
+flag=`cat /thunder/etc/.config.json | sed 's/{.*\"samba\": *\"\([^,}]*\)\".*}/\1/'`
+if [ $flag -ne 1 ]; then
+	ver=`ubus call upgrade get_status | awk -F"[.\"]" '/app_local_version/{print $6}'`
+	[ $ver -lt 299 ] && rm -rf /etc/init.d/S91smb
+	[ -f /thunder/etc/.config.json ] && mv /thunder/etc/.config.json /thunder/etc/config.json
+	exit 0
+fi
+
+kill -9 `pidof smbd`
+kill -9 `pidof nmbd`
+
+[ -f /tmp/.smb.conf ] && mv /tmp/.smb.conf /tmp/smb.conf
+if [ ! -f /thunder/etc/samba.json ]; then
+	[ -f /etc/init.d/S91smb ] && /etc/init.d/S91smb restart
+	[ -f /thunder/etc/.config.json ] && mv /thunder/etc/.config.json /thunder/etc/config.json
+	exit 0
+fi
+
+username=`cat /thunder/etc/samba.json | sed 's/{.*\"username\": *\"\([^,}]*\)\".*}/\1/'`
+password=`cat /thunder/etc/samba.json | sed 's/{.*\"password\": *\"\([^,}]*\)\".*}/\1/'`
+
+echo "username:$username passwork:$password"
+
+if [ -n "$username" -a -n "$password" ]; then
+echo "running ..."
+/usr/bin/smbpasswd -as $username <<EOF
+$password
+$password
+EOF
+fi
+
+[ $? -eq 0 ] && echo "fix OK" || echo "fix Fail"
+
+[ -f /etc/init.d/S91smb ] && /etc/init.d/S91smb restart
+[ -f /thunder/etc/.config.json ] && mv /thunder/etc/.config.json /thunder/etc/config.json
+exit 0
+

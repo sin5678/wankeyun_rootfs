@@ -1,0 +1,197 @@
+#!/bin/sh
+
+wxlog=/tmp/wxmnt.log
+app_mnt=/tmp/app_mnt
+
+
+check_md5_file()
+{
+    local arr="$1"
+    local md5must=`echo $line | awk '{ print $1 }'`
+    local filename=`echo $line | awk '{ print $2 }'`
+
+    local md5real=`md5sum "${app_mnt}/${filename}" | awk '{ print $1 }'`
+    if [ "${md5must}" != "${md5real}" ]; then
+        echo "file md5 not match, filename ${filename}, must ${md5must}, real ${md5real}" >> ${wxlog}
+        return 1
+    fi
+
+    return 0
+}
+
+check_md5_list()
+{
+    local md5_file=${app_mnt}/thunder/scripts/md5sum.list
+    if [ ! -f "${md5_file}" ]; then
+        echo "no md5 list file" >> ${wxlog}
+        return 0
+    fi
+
+    while read line
+    do
+        echo "check line $line"
+        check_md5_file "$line"
+        if [ $? -ne 0 ]; then
+            # app may damaged
+            return 1
+        fi
+    done < ${md5_file}
+
+	return 0
+}
+
+
+wx_mnt()
+{
+    if [ ! -f /misc/master ]; then
+        return 0
+    fi
+    
+    rm -rf ${wxlog}
+
+    # get the master/backup parition name from /misc/master file
+    local app_master=`cat /misc/master`
+    local app_dev=
+
+    if [ "$app_master" != "/dev/app0" -a "$app_master" != "/dev/app1" ]; then
+        # flag not set
+        echo "master file not set correctly" >> ${wxlog}
+        return 0
+    else
+        app_dev=${app_master}
+    fi
+
+    echo "use partition for app ${app_dev}" >> ${wxlog}
+
+    # mount the partition
+    
+    mkdir -p ${app_mnt}
+    chmod 755 ${app_mnt}
+    echo "try to umount ${app_dev}" >> ${wxlog}
+    umount ${app_dev} > /dev/null 2>&1
+
+    echo "try to fsck ${app_dev}" >> ${wxlog}
+    /usr/sbin/fsck.ext4 -p -c ${app_dev}
+
+    echo "try to mount ${app_dev} to ${app_mnt}" >> ${wxlog}
+    mount -t ext4 ${app_dev} ${app_mnt}
+    if [ $? -ne 0 ]; then
+        # mount failed
+        echo "mount failed" >> ${wxlog}
+        return 1
+    fi
+
+    # check the data in partition
+    check_md5_list
+    if [ $? -ne 0 ]; then
+        echo "app data may damaged !!!" >> ${wxlog}
+        umount ${app_dev}
+        return 2
+    fi
+
+    # mount bind to /thunder
+    if [ ! -e /thunder ]; then
+        echo "/thunder is not exist. try to mkdir it" >> ${wxlog}
+        mkdir /thunder
+        if [ $? -ne 0 ]; then
+            # mkdir failed
+            echo "mkdir failed" >> ${wxlog}
+            umount ${app_dev}
+            return 3
+        fi
+    fi
+
+    echo "try to mount bind ${app_mnt}/thunder to /thunder" >> ${wxlog}
+    mount -o bind "${app_mnt}/thunder" /thunder
+    if [ $? -ne 0 ]; then
+        # mount bind failed
+        echo "mount bind failed" >> ${wxlog}
+        umount ${app_dev}
+        return 4
+    fi
+
+    echo "mount app partition success" >> ${wxlog}
+    return 0
+}
+
+bootstrap_env_check()
+{
+	local rootfs_mtd=`df -h | grep -w "/" | awk '{print $1}'`
+	local env_bootup_flag=`fw_printenv | grep "second_rootfs_load=" | awk -F'=' '{print $2}'`
+	local env_ver=`fw_printenv | grep "xl_rootfs_version=" | awk -F'=' '{print $2}'`
+	local rootfs_ver_file="/.ver"
+	local kernel_mtd=`fw_printenv | awk '/^(bootpart=)/{print $0}' | awk -F'=' '{print $2}'`
+	local env_bootup_k_flag=`fw_printenv | grep "second_image_load=" | awk -F'=' '{print $2}'`
+	local kernel_env_ver=`fw_printenv | grep "xl_kernel_ver=" | awk -F'=' '{print $2}'`
+	local system_ver_file="/.sys_ver"
+	local system_env_ver=`fw_printenv | grep "xl_system_ver=" | awk -F'=' '{print $2}'`	
+
+	# rootfs package has a version indicated by file "/.ver" and dismatch which recorded in env,update it
+	if [ -f $rootfs_ver_file ]; then
+    		rootfs_ver=`cat $rootfs_ver_file`
+    
+    		if [ -n "$rootfs_ver" ]; then
+        		[ "$env_ver" = "$rootfs_ver" ] || fw_setenv xl_rootfs_version $rootfs_ver
+    		
+		fi
+	else
+		echo "file [$rootfs_ver_file] not exist" >> ${wxlog}
+	fi
+	
+	# system package own version file '/.sys_ver',update record in env if needed
+	if [ -f $system_ver_file ]; then
+		system_ver=`cat $system_ver_file`
+		
+		if [ -n "$system_ver" ]; then
+			[ "$env_ver" \< "$system_ver" ] && fw_setenv xl_rootfs_version $system_ver
+			[ "$kernel_env_ver" \< "$system_ver" ] && fw_setenv xl_kernel_ver $system_ver
+			[ "$system_env_ver" = "$system_ver" ] || fw_setenv xl_system_ver $system_ver
+		fi
+	else
+		echo "file [$system_ver_file] not exist" >> ${wxlog}
+	fi
+
+	# actually bootup rootfs partition dismatch,correct it
+	if [ "$rootfs_mtd" = "/dev/system" ]; then
+    		[ "$env_bootup_flag" = "off" ] || fw_setenv second_rootfs_load off
+	elif [ "$rootfs_mtd" = "/dev/backup" ]; then
+    		[ "$env_bootup_flag" = "on" ] || fw_setenv second_rootfs_load on
+
+	else
+		echo "unknown bootup mtd [$rootfs_mtd]" >> ${wxlog}
+    		return 1
+	fi
+
+	# actually bootup kernel partition dismatch,correct it
+	if [ "$kernel_mtd" = "boot" ]; then
+		[ "$env_bootup_k_flag" = "off" ] || fw_setenv second_image_load off
+	elif [ "$kernel_mtd" = "kernel" ]; then
+		[ "$env_bootup_k_flag" = "on"  ] || fw_setenv second_image_load on
+	else
+		echo "unknown kernel mtd [$kernel_mtd]" >> ${wxlog}
+		return 1
+	fi
+
+	return 0
+}
+
+
+
+case "$1" in
+  start)
+        wx_mnt
+	bootstrap_env_check
+        ;;
+  stop)
+        echo ""
+        ;;
+  restart|reload)
+        echo ""
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?
+

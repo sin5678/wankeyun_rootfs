@@ -1,0 +1,468 @@
+Package: plugin-agent
+Version: 1.24.2
+Section: extras
+Architecture: meson
+Maintainer: wx_galaxy@onething.net
+MD5Sum: d2215b1f2e582fc94ad00208ec99b4a2
+Size: 97578
+Filename: plugin-agent_1.24.2_meson.ipk
+Source: null
+Description:  Xunlei miner agent
+Priority: optional
+
+
+Package: plugin-cbs
+Version: 1.2.17
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: bc66ed4cdda1375597c55a48efc2d673
+Size: 302580
+Filename: plugin-cbs_1.2.17_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-crashreporter
+Version: 1.0.7
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: 71265b08ae9126ccedd5ff8e141a4cde
+Size: 1738454
+Filename: plugin-crashreporter_1.0.7_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-csbox
+Version: 2.6.8
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: ae75024e865ef1b8811aa6bc562eedfc
+Size: 5188424
+Filename: plugin-csbox_2.6.8_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-cspress
+Version: 0.0.8
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: 10bbfabc79a3249a1171df3a35d57cdc
+Size: 7967156
+Filename: plugin-cspress_0.0.8_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-datacollect
+Version: 1.0.24
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: f6dd265478f7832f21056d35c71e05cd
+Size: 9731272
+Filename: plugin-datacollect_1.0.24_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-ddosdetect
+Version: 1.1.0
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: 02348c54ea9ede985819f3ee4aca5f35
+Size: 1430138
+Filename: plugin-ddosdetect_1.1.0_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-deps
+Version: 1.2.16
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: ccbb9a1ff9aa2c3e5070e75b55b7b830
+Size: 54815102
+Filename: plugin-deps_1.2.16_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-discoversuperminergo
+Version: 0.2.9
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: c80fc3087b9676b50106e79ebcf5631b
+Size: 1707910
+Filename: plugin-discoversuperminergo_0.2.9_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-diskcheck
+Version: 0.1.10
+Section: extras
+Architecture: meson
+Maintainer: lingweiqiang@onething.net
+MD5Sum: b4a58f43afcb8afa964d922da2c14290
+Size: 16604
+Filename: plugin-diskcheck_0.1.10_meson.ipk
+Source: null
+Description:  A tool for determine a disk is capacity expansion or not.
+Priority: optional
+
+
+Package: plugin-diskcheckgo
+Version: 1.0.7
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: 0b372f69eb3fe533ca9b9d27f9f6052c
+Size: 2994898
+Filename: plugin-diskcheckgo_1.0.7_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-dockerd
+Version: V2.0.4
+Section: extras
+Architecture: meson
+Maintainer: linwei1@onething.net
+MD5Sum: 6219b93f544d9c0549d9559c5c123704
+Size: 59904242
+Filename: plugin-dockerd_V2.0.4_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-etm
+Version: 5.889.7
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: 073a3e763a9562c625df30d2bb7c8f78
+Size: 4060392
+Filename: plugin-etm_5.889.7_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-excpreporter
+Version: 1.0.5
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: bd8921571fa863c56173ae3ad0218be9
+Size: 3714
+Filename: plugin-excpreporter_1.0.5_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-iqiyihapp
+Version: 1.1.62
+Section: extras
+Architecture: meson
+Maintainer: hanshaoyang@xunlei.com
+MD5Sum: 0be128f8bc366f498161603c0c16029b
+Size: 5209772
+Filename: plugin-iqiyihapp_1.1.62_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-iqiyihappudisk
+Version: 1.1.52
+Section: extras
+Architecture: meson
+Maintainer: hanshaoyang@xunlei.com
+MD5Sum: baf9ddd39bbea8737cb1c95368e091c9
+Size: 5209798
+Filename: plugin-iqiyihappudisk_1.1.52_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-leapp
+Version: 2.0.1
+Section: extras
+Architecture: meson
+Maintainer: yangjie@xunlei.com
+MD5Sum: d974521907376031811f8ad3fc4cdad4
+Size: 9628214
+Filename: plugin-leapp_2.0.1_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-live
+Version: 1.9.16
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: 835bc8f77e38ab751d90fc368c29a0a2
+Size: 2279572
+Filename: plugin-live_1.9.16_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-macissuerepair
+Version: 1.0.1
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: 9002e0794cfaf033040a02ed0894087c
+Size: 2596
+Filename: plugin-macissuerepair_1.0.1_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-mcagent
+Version: 1.0.2
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: 5733d62065212ac47446b5ffc675dcb5
+Size: 306076
+Filename: plugin-mcagent_1.0.2_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-minion
+Version: 1.3.23
+Section: extras
+Architecture: meson
+Maintainer: lining3@xunlei.com
+MD5Sum: b7f88c7301eeb3090cb51b7c54e97e1e
+Size: 796284
+Filename: plugin-minion_1.3.23_meson.ipk
+Source: null
+Description:  Xunlei monitor agent
+Priority: optional
+
+
+Package: plugin-netprog
+Version: 1.5.13
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: 5c0337cfae4e7bbca67139f9a2d02339
+Size: 61526
+Filename: plugin-netprog_1.5.13_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-p2p-deploy
+Version: 1.5.8
+Section: extras
+Architecture: meson
+Maintainer: lixueyan@onething.net
+MD5Sum: 19a13ddc65fddcaac007e9f8cec1fecb
+Size: 1171630
+Filename: plugin-p2p-deploy_1.5.8_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-platinum
+Version: 1.8.12
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: c622151c5da1c2c4d6909790c6561cc6
+Size: 1636056
+Filename: plugin-platinum_1.8.12_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-qos
+Version: 1.0.10
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: bedc6d98b09367f1f7ef7a7792d6087d
+Size: 210722
+Filename: plugin-qos_1.0.10_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-relay
+Version: 1.0.16
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: 80d3f5c6db7a7a6611279190ae967a69
+Size: 3337626
+Filename: plugin-relay_1.0.16_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-suningapp
+Version: 1.0.57
+Section: extras
+Architecture: meson
+Maintainer: yangjieg@xunlei.com
+MD5Sum: 057d52874db1ab689022c2961e2558da
+Size: 2427124
+Filename: plugin-suningapp_1.0.57_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-systeminfo
+Version: 1.0.120
+Section: extras
+Architecture: meson
+Maintainer: lining3@xunlei.com
+MD5Sum: 20c9c28f388ae3d97cd3189e5dbdc586
+Size: 4058126
+Filename: plugin-systeminfo_1.0.120_meson.ipk
+Source: null
+Description:  Xunlei monitor agent
+Priority: optional
+
+
+Package: plugin-tencentqierouterproxy
+Version: 1.0.56
+Section: extras
+Architecture: meson
+Maintainer: lining3@onething.com
+MD5Sum: 04ba20808adf8a8a874c8f3a7e1ad64e
+Size: 2840008
+Filename: plugin-tencentqierouterproxy_1.0.56_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-tesla-udp
+Version: 0.0.2
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: 89d78a23871abac9991fd2fe0e7e8d1c
+Size: 3767074
+Filename: plugin-tesla-udp_0.0.2_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-tesla
+Version: 0.3.36
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: febb7697a5ddb6b74c9e386e835bd48a
+Size: 2957966
+Filename: plugin-tesla_0.3.36_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-traffic
+Version: 1.0.15
+Section: extras
+Architecture: meson
+Maintainer: rongwenjin@onething.net
+MD5Sum: 2b7363073b82a1f183269f7484344419
+Size: 2307852
+Filename: plugin-traffic_1.0.15_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-tunnel
+Version: 1.0.15
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: c995ca2dc5b1b317dbe6829b38baa9cb
+Size: 2895628
+Filename: plugin-tunnel_1.0.15_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-ubootinstall
+Version: 1.0.6
+Section: extras
+Architecture: meson
+Maintainer: wangzixiang@xunlei.com
+MD5Sum: f84b15a58431ed4854a04ca452679f3e
+Size: 365848
+Filename: plugin-ubootinstall_1.0.6_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-udpcheck
+Version: 1.0.4
+Section: extras
+Architecture: meson
+Maintainer: ipktools@xunlei.com
+MD5Sum: f35b3b5eb01bfb66e29d631b16792942
+Size: 3938
+Filename: plugin-udpcheck_1.0.4_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+
+Package: plugin-wsapp
+Version: 1.0.28
+Section: extras
+Architecture: meson
+Maintainer: yangjie@xunlei.com
+MD5Sum: dec3d77737e48ab96e227f468f67e706
+Size: 2774920
+Filename: plugin-wsapp_1.0.28_meson.ipk
+Source: null
+Description:  Xunlei miner software.
+Priority: optional
+
+

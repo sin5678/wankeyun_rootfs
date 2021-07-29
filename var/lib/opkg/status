@@ -1,0 +1,27 @@
+Package: onecloud-app
+Version: V1.2.3
+Status: install user installed
+Architecture: arm
+Installed-Size: 107311483
+Installed-Time: 1535657240
+
+Package: onecloud-upgrade
+Version: V1.1.1
+Status: install user installed
+Architecture: arm
+Installed-Size: 2688245
+Installed-Time: 1533588113
+
+Package: samba
+Version: 4.6.10
+Status: install user installed
+Architecture: arm
+Installed-Time: 1528967084
+
+Package: xyipkmng
+Version: V1.2.3
+Status: install user installed
+Architecture: arm
+Installed-Size: 2241985
+Installed-Time: 1536002820
+

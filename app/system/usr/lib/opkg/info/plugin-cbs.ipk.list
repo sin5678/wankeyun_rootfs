@@ -1,0 +1,10 @@
+/miner.plugin-cbs.ipk/bin/cbsmonitor
+/miner.plugin-cbs.ipk/bin/cbs_client
+/miner.plugin-cbs.ipk/bin/readme
+/miner.plugin-cbs.ipk/bin/run.sh
+/miner.plugin-cbs.ipk/start.sh
+/miner.plugin-cbs.ipk/version
+/miner.plugin-cbs.ipk/stop.sh
+/miner.plugin-cbs.ipk/conf/server.conf
+/miner.plugin-cbs.ipk/conf/zlog.conf
+/miner.plugin-cbs.ipk/makeipkversion

@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Start insmod ufsd ....
+#
+
+case "$1" in
+  start)
+	echo "Starting insmod  ufsd..."
+	# coldplug modules
+    [ -f /usr/lib/jnl.ko ] && insmod /usr/lib/jnl.ko 
+    [ -f /usr/lib/ufsd.ko ] && insmod /usr/lib/ufsd.ko 
+	;;
+  stop)
+	;;
+  restart|reload)
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?

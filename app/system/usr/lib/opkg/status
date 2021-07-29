@@ -1,0 +1,12 @@
+Package: plugin-cbs
+Version: 1.2.17
+Status: install user installed
+Architecture: meson
+Installed-Time: 1528967147
+
+Package: plugin-etm
+Version: 4.889.111
+Status: install user installed
+Architecture: meson
+Installed-Time: 1528967155
+
